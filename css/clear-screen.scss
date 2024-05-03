@@ -1,0 +1,28 @@
+#mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--base);
+  z-index: 100;
+  opacity: 0.8;
+}
+
+#clear-screen {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  left: 0;
+  width: fit-content;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 16px;
+  text-align: center;
+  z-index: 300;
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}
