@@ -22,9 +22,9 @@
   padding: 16px;
   text-align: center;
   z-index: 300;
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
 }
-#clear-screen h2 {
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-/*# sourceMappingURL=clear-screen.css.map */
