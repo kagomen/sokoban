@@ -1,5 +1,11 @@
 :root {
-  --base: black;
+  --base: #000000;
   --white: #f9f8f6;
   --btn-primary: #3dacd7;
+  --story: #212121;
+}
+
+@font-face {
+  font-family: monogram;
+  src: url(../assets/monogram.ttf);
 }
