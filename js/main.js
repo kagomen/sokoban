@@ -2,7 +2,6 @@ import { checkAndDisplayGameClear } from './checkAndDisplayGameClear.js';
 import { tileMap } from './tileMap.js';
 import { draw } from './draw.js';
 
-let goalArr = [];
 let playerPosX = 12;
 let playerPosY = 8;
 let tileMapCopy;
@@ -16,16 +15,8 @@ window.addEventListener('keydown', (e) => {
 });
 
 function init() {
-  goalArr = [];
   playerPosX = 12;
   playerPosY = 8;
-  for (let i = 0; i < tileMap.length; i++) {
-    for (let j = 0; j < tileMap[i].length; j++) {
-      if (tileMap[i][j] === 2) {
-        goalArr.push(tileMap[i][j]);
-      }
-    }
-  }
   tileMapCopy = structuredClone(tileMap);
   draw(tileMap, playerPosX, playerPosY);
 }
@@ -76,7 +67,7 @@ function update(pressedKey) {
   }
 
   draw(tileMapCopy, playerPosX, playerPosY);
-  checkAndDisplayGameClear(tileMapCopy, goalArr);
+  checkAndDisplayGameClear(tileMapCopy);
 }
 
 document.getElementById('close-btn').addEventListener('click', () => {
