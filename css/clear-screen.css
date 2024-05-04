@@ -25,6 +25,10 @@
 
   h2 {
     font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  #next-stage-btn {
     margin-bottom: 16px;
   }
 }

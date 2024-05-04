@@ -11,9 +11,6 @@ button {
   padding: 4px;
   background: var(--btn-primary);
   cursor: pointer;
-}
-
-#restart-btn {
   display: block;
   margin: 0 auto;
 }

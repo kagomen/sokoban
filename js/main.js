@@ -1,10 +1,11 @@
-import { checkAndDisplayGameClear } from './checkAndDisplayGameClear.js';
+import { checkAndDisplayGameClear, closeClearScreen } from './checkAndDisplayGameClear.js';
 import { tileMap } from './tileMap.js';
 import { draw } from './draw.js';
 
 let playerPosX = 12;
 let playerPosY = 8;
 let tileMapCopy;
+let currentStage = 0;
 
 window.addEventListener('load', () => {
   init();
@@ -17,8 +18,8 @@ window.addEventListener('keydown', (e) => {
 function init() {
   playerPosX = 12;
   playerPosY = 8;
-  tileMapCopy = structuredClone(tileMap);
-  draw(tileMap, playerPosX, playerPosY);
+  tileMapCopy = structuredClone(tileMap[currentStage]);
+  draw(tileMap[currentStage], playerPosX, playerPosY);
 }
 
 function update(pressedKey) {
@@ -70,11 +71,17 @@ function update(pressedKey) {
   checkAndDisplayGameClear(tileMapCopy);
 }
 
-document.getElementById('close-btn').addEventListener('click', () => {
-  document.getElementById('mask').hidden = true;
-  document.getElementById('clear-screen').hidden = true;
-});
 
 document.getElementById('restart-btn').addEventListener('click', () => {
   init();
+});
+
+document.getElementById('next-stage-btn').addEventListener('click', () => {
+  currentStage++;
+  init();
+  closeClearScreen();
+});
+
+document.getElementById('close-btn').addEventListener('click', () => {
+  closeClearScreen();
 });

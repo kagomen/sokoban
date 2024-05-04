@@ -17,3 +17,8 @@ export function checkAndDisplayGameClear(tileMap) {
     document.getElementById('clear-screen').hidden = false;
   }
 }
+
+export function closeClearScreen() {
+  document.getElementById('mask').hidden = true;
+  document.getElementById('clear-screen').hidden = true;
+}
