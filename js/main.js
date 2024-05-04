@@ -1,5 +1,5 @@
 import { checkAndDisplayGameClear, closeClearScreen } from './checkAndDisplayGameClear.js';
-import { tileMap } from './tileMap.js';
+import { tileMaps } from './tileMaps.js';
 import { draw } from './draw.js';
 
 let playerPosX = 12;
@@ -16,10 +16,26 @@ window.addEventListener('keydown', (e) => {
 });
 
 function init() {
-  playerPosX = 12;
-  playerPosY = 8;
-  tileMapCopy = structuredClone(tileMap[currentStage]);
-  draw(tileMap[currentStage], playerPosX, playerPosY);
+
+  // 後で消す
+  for (let i = 0; i < tileMaps.length; i++) {
+    console.log(`ステージ${i}の長さ: `, tileMaps[i].length);
+    for (let x = 0; x < tileMaps[i].length; x++) {
+      console.log(tileMaps[i][x].length);
+    }
+  }
+
+  for (let y = 0; y < tileMaps[currentStage].length; y++) {
+    for (let x = 0; x < tileMaps[currentStage][y].length; x++) {
+      if (tileMaps[currentStage][y][x] == '@') {
+        playerPosX = x;
+        playerPosY = y;
+      }
+    }
+  }
+  tileMapCopy = structuredClone(tileMaps[currentStage]);
+  tileMapCopy[playerPosX][playerPosY] = 0;
+  draw(tileMapCopy, playerPosX, playerPosY);
 }
 
 function update(pressedKey) {
