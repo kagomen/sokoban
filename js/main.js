@@ -93,9 +93,17 @@ document.getElementById('restart-btn').addEventListener('click', () => {
 });
 
 document.getElementById('next-stage-btn').addEventListener('click', () => {
-  currentStage++;
-  init();
-  closeClearScreen();
+  if (currentStage < tileMaps.length) {
+    currentStage++;
+    init();
+  }
+});
+
+document.getElementById('prev-stage-btn').addEventListener('click', () => {
+  if (currentStage > 0) {
+    currentStage--;
+    init();
+  }
 });
 
 document.getElementById('close-btn').addEventListener('click', () => {

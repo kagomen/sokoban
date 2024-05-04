@@ -1,17 +1,16 @@
 body {
   background: var(--base);
-  font-family: monogram, sans-serif;
+  font-family: sans-serif;
 }
 
 canvas {
   display: block;
   margin: 40px auto;
-  background: var(--base);
 }
 
 button {
-  font-family: monogram, sans-serif;
-  font-size: 24px;
+  font-family: sans-serif;
+  /* font-size: 24px; */
   padding: 4px;
   background: var(--btn-primary);
   cursor: pointer;
