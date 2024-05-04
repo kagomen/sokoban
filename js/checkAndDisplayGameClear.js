@@ -1,5 +1,3 @@
-const mask = document.getElementById('mask');
-const clearScreen = document.getElementById('clear-screen');
 
 export function checkAndDisplayGameClear(tileMap, goalArr) {
   const clearArr = [];
@@ -10,13 +8,10 @@ export function checkAndDisplayGameClear(tileMap, goalArr) {
       }
     }
   }
+
+  // 値が3のタイルの数と目的地の数が一致したら、クリア画面を表示
   if (clearArr.length == goalArr.length) {
-    mask.hidden = false;
-    clearScreen.hidden = false;
+    document.getElementById('mask').hidden = false;
+    document.getElementById('clear-screen').hidden = false;
   }
 }
-
-document.getElementById('next-stage-btn').addEventListener('click', () => {
-  mask.hidden = true;
-  clearScreen.hidden = true;
-});
