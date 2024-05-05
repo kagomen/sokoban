@@ -6,7 +6,9 @@
   align-items: center;
   gap: 16px;
   font-size: 12px;
-  margin: 16px auto;
+  margin: 0 auto;
+  padding-top: 24px;
+  padding-bottom: 8px;
 
   svg {
     width: 1rem;

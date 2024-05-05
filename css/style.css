@@ -1,3 +1,5 @@
+@charset 'utf-8';
+
 * {
   font-family: MenuCard, sans-serif;
 }
@@ -6,6 +8,10 @@ body {
   background: var(--base);
   color: var(--white);
   font-size: 14px;
+}
+
+main {
+  height: calc(100vh - 48px - 32px);
 }
 
 canvas {
