@@ -32,25 +32,25 @@
     #up-btn {
       position: absolute;
       top: 0;
-      right: var(--btn-size);
+      right: calc(var(--btn-size) + var(--btn-spacing));
     }
 
     #left-btn {
       position: absolute;
-      top: var(--btn-size);
-      right: calc(var(--btn-size) * 2);
+      top: calc(var(--btn-size) + var(--btn-spacing));
+      right: calc(var(--btn-size) * 2 + calc(var(--btn-spacing) * 2));
     }
 
     #right-btn {
       position: absolute;
-      top: var(--btn-size);
+      top: calc(var(--btn-size) + var(--btn-spacing));
       right: 0;
     }
 
     #down-btn {
       position: absolute;
-      top: calc(var(--btn-size) * 2);
-      right: var(--btn-size);
+      top: calc(var(--btn-size) * 2 + calc(var(--btn-spacing) * 2));
+      right: calc(var(--btn-size) + var(--btn-spacing));
     }
   }
 }

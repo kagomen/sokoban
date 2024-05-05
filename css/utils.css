@@ -12,6 +12,7 @@
   --canvas-width: 264px;
   --canvas-height: 216px;
   --btn-size: 40px;
+  --btn-spacing: 6px;
 }
 
 @font-face {

@@ -67,11 +67,20 @@
 
   - ほとんどのブラウザで使用可能！
   - https://caniuse.com/?search=css%20nest
+  - 少し前のバージョンの Safari は未対応なのでユーザーが Safari をアップデートしていない場合、CSS が反映されない
 
 - touch-action: manipulation;
 
   - スマホでのダブルタップ時にズームされるのを無効にする
 
 - dvh
-  - iPhone の Safari で下に URL ボックスが表示され、`vh`が思い通りに機能をしない
+
+  - iPhone の Safari で下に URL ボックスが表示され、`vh`が思い通りに機能をしないのを防ぐ
   - https://webrandum.net/ios-safari-dvh/
+
+- -webkit-user-select: none;
+
+  - Safari だと`user-select: none;`が効かない
+
+- -webkit-touch-callout: none;
+  - 画像などを長押しした際に出現するポップアップを無効にする
