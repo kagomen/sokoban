@@ -1,0 +1,21 @@
+@charset 'utf-8';
+
+header {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  border-bottom: 1px solid var(--yellow);
+
+  img {
+    width: 1em;
+    height: 1em;
+    transform: translateY(-2px);
+    margin-left: 12px;
+  }
+
+  h1 {
+    margin-left: 12px;
+    font-size: 14px;
+  }
+}
