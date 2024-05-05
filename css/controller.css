@@ -10,7 +10,8 @@
 
   .btn-wrapper {
     width: 40%;
-    padding-top: 8px;
+    margin-top: 8px;
+    margin-left: 4px;
 
     button {
       margin-left: 0;
@@ -27,7 +28,7 @@
   .arrow-btn-wrapper {
     width: 50%;
     position: relative;
-    margin-right: 8px;
+    margin-right: 4px;
 
     img {
       cursor: pointer;

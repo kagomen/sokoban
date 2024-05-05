@@ -2,8 +2,8 @@ import { checkAndDisplayGameClear, closeClearScreen } from './checkAndDisplayGam
 import { tileMaps } from './tileMaps.js';
 import { draw } from './draw.js';
 
-let playerPosX = 12;
-let playerPosY = 8;
+let playerPosX;
+let playerPosY;
 let tileMapCopy;
 let currentStage = 0;
 const stageIndex = document.getElementById('stage-index');
@@ -14,6 +14,20 @@ window.addEventListener('load', () => {
 
 window.addEventListener('keydown', (e) => {
   update(e.code);
+});
+
+// スマホ用ボタンでの操作
+document.getElementById('up-btn').addEventListener('click', () => {
+  update('ArrowUp');
+});
+document.getElementById('left-btn').addEventListener('click', () => {
+  update('ArrowLeft');
+});
+document.getElementById('right-btn').addEventListener('click', () => {
+  update('ArrowRight');
+});
+document.getElementById('down-btn').addEventListener('click', () => {
+  update('ArrowDown');
 });
 
 function init() {
@@ -44,7 +58,13 @@ function update(pressedKey) {
   let y1 = playerPosY;  // 現在のコマからy軸方向に1コマ離れた場所
   let x2 = playerPosX;  // 現在のコマからx軸方向に2コマ離れた場所
   let y2 = playerPosY;  // 現在のコマからy軸方向に2コマ離れた場所
+
+  // 矢印キーでの操作
   switch (pressedKey) {
+    case 'ArrowUp':
+      y1 -= 1;
+      y2 -= 2;
+      break;
     case 'ArrowLeft':
       x1 -= 1;
       x2 -= 2;
@@ -52,10 +72,6 @@ function update(pressedKey) {
     case 'ArrowRight':
       x1 += 1;
       x2 += 2;
-      break;
-    case 'ArrowUp':
-      y1 -= 1;
-      y2 -= 2;
       break;
     case 'ArrowDown':
       y1 += 1;
