@@ -2,7 +2,7 @@
 
 :root {
   /* カラー */
-  --base: #000000;
+  --black: #000000;
   --white: #f9f8f6;
   --yellow: #F4B41A;
   --blue: #3dacd7;
@@ -17,4 +17,8 @@
 @font-face {
   font-family: MenuCard;
   src: url(../assets/MenuCard.ttf);
+}
+
+html {
+  touch-action: manipulation;
 }

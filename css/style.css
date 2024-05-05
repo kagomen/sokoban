@@ -5,13 +5,15 @@
 }
 
 body {
-  background: var(--base);
+  z-index: -100;
+  background: var(--black);
   color: var(--white);
   font-size: 14px;
 }
 
 main {
   height: calc(100vh - 48px - 32px);
+  background: var(--black);
 }
 
 canvas {
