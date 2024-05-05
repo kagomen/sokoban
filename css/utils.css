@@ -5,7 +5,7 @@
   --story: #212121;
 }
 
-/* @font-face {
-  font-family: ;
-  src: url();
-} */
+@font-face {
+  font-family: MenuCard;
+  src: url(../assets/MenuCard.ttf);
+}

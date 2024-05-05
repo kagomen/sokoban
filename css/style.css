@@ -1,16 +1,18 @@
+* {
+  font-family: MenuCard, sans-serif;
+}
+
 body {
   background: var(--base);
-  font-family: sans-serif;
 }
 
 canvas {
   display: block;
-  margin: 40px auto;
+  margin: 0 auto;
+  margin-bottom: 24px;
 }
 
 button {
-  font-family: sans-serif;
-  /* font-size: 24px; */
   padding: 4px;
   background: var(--btn-primary);
   cursor: pointer;
