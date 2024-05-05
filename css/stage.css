@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+#stage {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  color: var(--white);
+  font-size: 16px;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+    fill: var(--white);
+  }
+}

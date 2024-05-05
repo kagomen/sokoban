@@ -6,6 +6,7 @@ let playerPosX = 12;
 let playerPosY = 8;
 let tileMapCopy;
 let currentStage = 0;
+const stageIndex = document.getElementById('stage-index');
 
 window.addEventListener('load', () => {
   init();
@@ -17,13 +18,13 @@ window.addEventListener('keydown', (e) => {
 
 function init() {
 
-  // 後で消す
-  for (let i = 0; i < tileMaps.length; i++) {
-    console.log(`ステージ${i}の長さ: `, tileMaps[i].length);
-    for (let x = 0; x < tileMaps[i].length; x++) {
-      console.log(tileMaps[i][x].length);
-    }
-  }
+  // // 後で消す
+  // for (let i = 0; i < tileMaps.length; i++) {
+  //   console.log(`ステージ${i}の長さ: `, tileMaps[i].length);
+  //   for (let x = 0; x < tileMaps[i].length; x++) {
+  //     console.log(tileMaps[i][x].length);
+  //   }
+  // }
 
   for (let y = 0; y < tileMaps[currentStage].length; y++) {
     for (let x = 0; x < tileMaps[currentStage][y].length; x++) {
@@ -93,8 +94,9 @@ document.getElementById('restart-btn').addEventListener('click', () => {
 });
 
 document.getElementById('next-stage-btn').addEventListener('click', () => {
-  if (currentStage < tileMaps.length) {
+  if (currentStage < tileMaps.length - 1) {
     currentStage++;
+    stageIndex.textContent = currentStage + 1;
     init();
   }
 });
@@ -102,6 +104,7 @@ document.getElementById('next-stage-btn').addEventListener('click', () => {
 document.getElementById('prev-stage-btn').addEventListener('click', () => {
   if (currentStage > 0) {
     currentStage--;
+    stageIndex.textContent = currentStage + 1;
     init();
   }
 });
