@@ -1,11 +1,17 @@
 @charset 'utf-8';
 
 :root {
+  /* カラー */
   --base: #000000;
   --white: #f9f8f6;
   --yellow: #F4B41A;
   --blue: #3dacd7;
   --story: #212121;
+
+  /* サイズ */
+  --canvas-width: 264px;
+  --canvas-height: 216px;
+  --btn-size: 40px;
 }
 
 @font-face {

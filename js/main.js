@@ -89,7 +89,7 @@ function update(pressedKey) {
 }
 
 
-document.getElementById('restart-btn').addEventListener('click', () => {
+document.getElementById('reset-btn').addEventListener('click', () => {
   init();
 });
 

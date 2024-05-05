@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/stage.css">
+  <link rel="stylesheet" href="css/controller.css">
   <link rel="stylesheet" href="css/clear-screen.css">
   <script src="js/main.js" type="module"></script>
 </head>
@@ -36,7 +37,19 @@
     </section>
 
     <canvas width="264" height="216"></canvas>
-    <button id="restart-btn">Restart</button>
+
+    <section id="controller">
+      <div class="btn-wrapper">
+        <button id="reset-btn">Reset</button>
+        <button id="undo-btn">Undo</button>
+      </div>
+      <div class="arrow-btn-wrapper">
+        <img id="up-btn" src="assets/controller-img/up.png" alt="up-btn">
+        <img id="left-btn" src="assets/controller-img/left.png" alt="left-btn">
+        <img id="right-btn" src="assets/controller-img/right.png" alt="right-btn">
+        <img id="down-btn" src="assets/controller-img/down.png" alt="down-btn">
+      </div>
+    </section>
   </main>
 
   <footer>

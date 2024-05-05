@@ -1,0 +1,61 @@
+@charset 'utf-8';
+
+#controller {
+  width: var(--canvas-width);
+  margin: 0 auto;
+  /* border: 1px solid #fff; */
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+
+  .btn-wrapper {
+    width: 40%;
+    padding-top: 8px;
+
+    button {
+      margin-left: 0;
+      margin-bottom: 20px;
+      padding: 10px 24px;
+      color: var(--white);
+      background: var(--black);
+      border: 1px solid var(--yellow);
+      border-bottom: 3px solid var(--yellow);
+      font-size: 12px;
+    }
+  }
+
+  .arrow-btn-wrapper {
+    width: 50%;
+    position: relative;
+    margin-right: 8px;
+
+    img {
+      cursor: pointer;
+      width: var(--btn-size);
+    }
+
+    #up-btn {
+      position: absolute;
+      top: 0;
+      right: var(--btn-size);
+    }
+
+    #left-btn {
+      position: absolute;
+      top: var(--btn-size);
+      right: calc(var(--btn-size) * 2);
+    }
+
+    #right-btn {
+      position: absolute;
+      top: var(--btn-size);
+      right: 0;
+    }
+
+    #down-btn {
+      position: absolute;
+      top: calc(var(--btn-size) * 2);
+      right: var(--btn-size);
+    }
+  }
+}
