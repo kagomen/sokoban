@@ -128,3 +128,9 @@ document.getElementById('prev-stage-btn').addEventListener('click', () => {
 document.getElementById('close-btn').addEventListener('click', () => {
   closeClearScreen();
 });
+document.getElementById('clear-next-stage-btn').addEventListener('click', () => {
+  currentStage++;
+  stageIndex.textContent = currentStage + 1;
+  init();
+  closeClearScreen();
+});

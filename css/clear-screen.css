@@ -31,7 +31,7 @@
     margin-bottom: 32px;
   }
 
-  #next-stage-btn {
+  button:nth-child(2) {
     margin-bottom: 16px;
   }
 }
