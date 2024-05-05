@@ -5,6 +5,7 @@
 body {
   background: var(--base);
   color: var(--white);
+  font-size: 14px;
 }
 
 canvas {
