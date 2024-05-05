@@ -1,4 +1,9 @@
 
+const sound = new Howl({
+  src: ['assets/clear.mp3'],
+  volume: 0.5,
+});
+
 export function checkAndDisplayGameClear(tileMap) {
 
   let GoalIsLeft = false;
@@ -15,5 +20,7 @@ export function checkAndDisplayGameClear(tileMap) {
     // クリア画面を表示
     document.getElementById('clear-mask').hidden = false;
     document.getElementById('clear-modal').hidden = false;
+
+    sound.play();
   }
 }

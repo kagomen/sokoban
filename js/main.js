@@ -9,6 +9,21 @@ let tileMapCopy;
 let currentStage = 0;
 const stageIndex = document.getElementById('stage-index');
 
+const moveSound = new Howl({
+  src: ['assets/move.mp3'],
+  volume: 0.7,
+});
+
+const changeStageSound = new Howl({
+  src: ['assets/change-stage.mp3'],
+  volume: 0.7,
+});
+
+const systemSound = new Howl({
+  src: ['assets/system.mp3'],
+  volume: 0.6,
+});
+
 window.addEventListener('load', () => {
   init();
 });
@@ -100,13 +115,14 @@ function update(pressedKey) {
       playerPosY = y1;
     }
   }
-
+  moveSound.play();
   draw(tileMapCopy, playerPosX, playerPosY);
   checkAndDisplayGameClear(tileMapCopy);
 }
 
 
 document.getElementById('reset-btn').addEventListener('click', () => {
+  systemSound.play();
   init();
 });
 
@@ -115,6 +131,7 @@ document.getElementById('next-stage-btn').addEventListener('click', () => {
     currentStage++;
     stageIndex.textContent = currentStage + 1;
     init();
+    changeStageSound.play();
   }
 });
 
@@ -123,20 +140,24 @@ document.getElementById('prev-stage-btn').addEventListener('click', () => {
     currentStage--;
     stageIndex.textContent = currentStage + 1;
     init();
+    changeStageSound.play();
   }
 });
 
 document.getElementById('close-btn').addEventListener('click', () => {
   closeClearModal();
+  systemSound.play();
 });
 
 document.getElementById('clear-next-stage-btn').addEventListener('click', () => {
   currentStage++;
   stageIndex.textContent = currentStage + 1;
   init();
+  systemSound.play();
   closeClearModal();
 });
 
 document.getElementById('play-btn').addEventListener('click', () => {
+  systemSound.play();
   closeHowToModal();
 });

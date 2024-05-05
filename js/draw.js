@@ -1,8 +1,5 @@
 import { g, canvas } from './canvas.js';
 
-const tiles = new Image();
-tiles.src = 'assets/tiles.png';
-
 const goal = new Image();
 goal.src = 'assets/tiles/goal.png';
 const cheese = new Image();
