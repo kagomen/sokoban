@@ -13,12 +13,7 @@ export function checkAndDisplayGameClear(tileMap) {
   }
   if (GoalIsLeft == false) {
     // クリア画面を表示
-    document.getElementById('mask').hidden = false;
-    document.getElementById('clear-screen').hidden = false;
+    document.getElementById('clear-mask').hidden = false;
+    document.getElementById('clear-modal').hidden = false;
   }
-}
-
-export function closeClearScreen() {
-  document.getElementById('mask').hidden = true;
-  document.getElementById('clear-screen').hidden = true;
 }

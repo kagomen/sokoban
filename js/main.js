@@ -1,6 +1,7 @@
-import { checkAndDisplayGameClear, closeClearScreen } from './checkAndDisplayGameClear.js';
+import { checkAndDisplayGameClear } from './checkAndDisplayGameClear.js';
 import { tileMaps } from './tileMaps.js';
 import { draw } from './draw.js';
+import { closeClearModal, closeHowToModal } from './closeModal.js';
 
 let playerPosX;
 let playerPosY;
@@ -126,11 +127,16 @@ document.getElementById('prev-stage-btn').addEventListener('click', () => {
 });
 
 document.getElementById('close-btn').addEventListener('click', () => {
-  closeClearScreen();
+  closeClearModal();
 });
+
 document.getElementById('clear-next-stage-btn').addEventListener('click', () => {
   currentStage++;
   stageIndex.textContent = currentStage + 1;
   init();
-  closeClearScreen();
+  closeClearModal();
+});
+
+document.getElementById('play-btn').addEventListener('click', () => {
+  closeHowToModal();
 });

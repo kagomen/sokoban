@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/stage.css">
   <link rel="stylesheet" href="css/controller.css">
-  <link rel="stylesheet" href="css/clear-screen.css">
+  <link rel="stylesheet" href="css/modal.css">
   <script src="js/main.js" type="module"></script>
   <link rel="icon" href="assets/sokoban-favicon.png" type="image/png">
 </head>
@@ -57,13 +57,34 @@
   </footer>
 
   <!-- クリア画面ここから -->
-  <div id="mask"></div>
-  <section id="clear-screen">
+  <div id="clear-mask" class="mask" hidden></div>
+  <section id="clear-modal" class="modal" hidden>
     <h2>Stage Clear!</h2>
     <button id="clear-next-stage-btn">Next Stage</button>
     <button id="close-btn">Close</button>
   </section>
   <!-- クリア画面ここまで -->
+
+  <!-- 遊び方画面ここから -->
+  <div id="how-to-mask" class="mask"></div>
+  <section id="how-to-modal" class="modal">
+    <h2>How to Play</h2>
+    <div>
+      <p>
+        Move<img src="assets/tiles/mouse.png" alt="mouse-image">to carry<img src="assets/tiles/cheese.png"
+          alt="cheese-image">to<img src="assets/tiles/goal.png" alt="goal-image">.
+      </p>
+      <section>
+        <h3>- For PC users -</h3>
+        <p>You can use arrow keys.</p>
+        <p>Press R for Reset.</p>
+        <p>Press U for Undo.</p>
+      </section>
+    </div>
+    <button id="play-btn">Let's Play !</button>
+  </section>
+  <!-- 遊び方画面ここまで -->
+
 </body>
 
 </html>

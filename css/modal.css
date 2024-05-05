@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-#mask {
+.mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
   opacity: 0.8;
 }
 
-#clear-screen {
+.modal {
   position: fixed;
   top: 80px;
   right: 0;
@@ -28,10 +28,36 @@
 
   h2 {
     font-size: 16px;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
+}
+
+#clear-modal {
 
   button:nth-child(2) {
     margin-bottom: 16px;
+  }
+}
+
+#how-to-modal {
+  p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  img {
+    width: 24px;
+    transform: translateY(5px);
+    margin: 0 4px;
+  }
+
+  h3 {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-size: 12px;
+  }
+
+  button {
+    margin-top: 32px;
   }
 }
