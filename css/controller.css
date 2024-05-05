@@ -16,12 +16,6 @@
     button {
       margin-left: 0;
       margin-bottom: 20px;
-      padding: 10px 24px;
-      color: var(--white);
-      background: var(--black);
-      border: 1px solid var(--yellow);
-      border-bottom: 4px solid var(--yellow);
-      font-size: 12px;
     }
   }
 

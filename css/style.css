@@ -23,9 +23,13 @@ canvas {
 }
 
 button {
-  padding: 4px;
-  background: var(--blue);
   cursor: pointer;
   display: block;
   margin: 0 auto;
+  padding: 10px 24px;
+  color: var(--white);
+  background: var(--black);
+  border: 1px solid var(--yellow);
+  border-bottom: 4px solid var(--yellow);
+  font-size: 12px;
 }

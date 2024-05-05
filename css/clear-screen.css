@@ -6,7 +6,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: var(--base);
+  background: var(--black);
   z-index: 100;
   opacity: 0.8;
 }
@@ -20,14 +20,15 @@
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
-  background: var(--white);
-  padding: 16px;
+  background: var(--black);
+  border: 1px solid var(--white);
+  padding: 32px;
   text-align: center;
   z-index: 300;
 
   h2 {
-    font-size: 20px;
-    margin-bottom: 24px;
+    font-size: 16px;
+    margin-bottom: 32px;
   }
 
   #next-stage-btn {

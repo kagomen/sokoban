@@ -21,4 +21,9 @@
 
 html {
   touch-action: manipulation;
+  user-select: none;
+}
+
+* {
+  user-select: none;
 }
