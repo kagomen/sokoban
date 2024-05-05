@@ -64,5 +64,9 @@
   - position 指定された要素や flex 要素にしか効かない
 
 - CSS Nest
+
   - ほとんどのブラウザで使用可能！
   - https://caniuse.com/?search=css%20nest
+
+- touch-action: manipulation;
+  - スマホでのダブルタップ時にズームされるのを無効にする

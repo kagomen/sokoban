@@ -16,4 +16,8 @@
     cursor: pointer;
     fill: var(--white);
   }
+
+  #prev-stage-btn {
+    transform: scale(-1, 1);
+  }
 }
