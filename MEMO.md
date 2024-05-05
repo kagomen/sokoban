@@ -69,4 +69,9 @@
   - https://caniuse.com/?search=css%20nest
 
 - touch-action: manipulation;
+
   - スマホでのダブルタップ時にズームされるのを無効にする
+
+- dvh
+  - iPhone の Safari で下に URL ボックスが表示され、`vh`が思い通りに機能をしない
+  - https://webrandum.net/ios-safari-dvh/
