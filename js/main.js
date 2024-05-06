@@ -186,3 +186,9 @@ document.getElementById('how-to-btn').addEventListener('click', () => {
   systemSound.play();
   openHowToModal();
 });
+
+document.getElementById('page-title').addEventListener('click', () => {
+  currentStage = 0;
+  stageIndex.textContent = currentStage + 1;
+  init();
+});

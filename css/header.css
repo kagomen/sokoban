@@ -12,6 +12,7 @@ header {
     margin-left: 12px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     img {
       width: 22px;
@@ -27,5 +28,6 @@ header {
 
   p {
     margin-right: 12px;
+    cursor: pointer;
   }
 }
