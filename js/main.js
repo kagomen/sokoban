@@ -8,28 +8,13 @@ let playerPosX;
 let playerPosY;
 let tileMapCopy;
 let currentStage = 0;
-const stageIndex = document.getElementById('stage-index');
 
 window.addEventListener('load', () => {
   init();
 });
 
 window.addEventListener('keydown', (e) => {
-  update(e.code);
-});
-
-// スマホ用ボタンでの操作
-document.getElementById('up-btn').addEventListener('click', () => {
-  update('ArrowUp');
-});
-document.getElementById('left-btn').addEventListener('click', () => {
-  update('ArrowLeft');
-});
-document.getElementById('right-btn').addEventListener('click', () => {
-  update('ArrowRight');
-});
-document.getElementById('down-btn').addEventListener('click', () => {
-  update('ArrowDown');
+  update(e);
 });
 
 function init() {
@@ -55,14 +40,14 @@ function init() {
   draw(tileMapCopy, playerPosX, playerPosY);
 }
 
-function update(pressedKey) {
+function update(e) {
   let x1 = playerPosX;  // 現在のコマからx軸方向に1コマ離れた場所
   let y1 = playerPosY;  // 現在のコマからy軸方向に1コマ離れた場所
   let x2 = playerPosX;  // 現在のコマからx軸方向に2コマ離れた場所
   let y2 = playerPosY;  // 現在のコマからy軸方向に2コマ離れた場所
 
   // 矢印キーでの操作
-  switch (pressedKey) {
+  switch (e.code) {
     case 'ArrowUp':
       y1 -= 1;
       y2 -= 2;
@@ -107,10 +92,30 @@ function update(pressedKey) {
 }
 
 
+// ================ スマホ用矢印ボタンのクリックイベント ================
+
+document.getElementById('up-btn').addEventListener('click', () => {
+  update('ArrowUp');
+});
+document.getElementById('left-btn').addEventListener('click', () => {
+  update('ArrowLeft');
+});
+document.getElementById('right-btn').addEventListener('click', () => {
+  update('ArrowRight');
+});
+document.getElementById('down-btn').addEventListener('click', () => {
+  update('ArrowDown');
+});
+
+
+// ====================== その他クリックイベント ======================
+
 document.getElementById('reset-btn').addEventListener('click', () => {
   systemSound.play();
   init();
 });
+
+const stageIndex = document.getElementById('stage-index');
 
 document.getElementById('next-stage-btn').addEventListener('click', () => {
   if (currentStage < tileMaps.length - 1) {
