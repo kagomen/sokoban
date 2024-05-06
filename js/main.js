@@ -1,7 +1,7 @@
 import { checkAndDisplayGameClear } from './checkAndDisplayGameClear.js';
 import { tileMaps } from './tileMaps.js';
 import { draw } from './draw.js';
-import { closeClearModal, closeHowToModal } from './closeModal.js';
+import { closeClearModal, closeHowToModal, openHowToModal } from './modal.js';
 import { moveSound, changeStageSound, systemSound } from './sound.js';
 
 let playerPosX;
@@ -146,4 +146,9 @@ document.getElementById('clear-next-stage-btn').addEventListener('click', () => 
 document.getElementById('play-btn').addEventListener('click', () => {
   systemSound.play();
   closeHowToModal();
+});
+
+document.getElementById('how-to-btn').addEventListener('click', () => {
+  systemSound.play();
+  openHowToModal();
 });
