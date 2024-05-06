@@ -57,6 +57,28 @@
     import "./foo.js";
     ```
 
+- localStorage
+
+  - クライアントサイドでのみデータの使用が可能
+  - 永続的にデータを保存する
+
+  ```js
+  localStorage.setItem("keyName", "value");
+  localStorage.getItem("keyName");
+  ```
+
+  - 注意点
+    - localStorage に set した値はすべて文字列に変換されるので、数字や真偽値を扱う際は注意する
+
+- sessionStorage
+
+  - クライアントサイドでのみデータの使用が可能
+  - ブラウザを閉じるとデータは破棄される
+
+- cookie
+  - クライアントサイドとサーバーサイドの両方でデータの使用が可能
+  - データの保存期間を設定できる
+
 ## CSS
 
 - z-index

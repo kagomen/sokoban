@@ -13,6 +13,13 @@ let playerPosXStack = [];
 let playerPosYStack = [];
 
 window.addEventListener('load', () => {
+
+  // 初訪問であればロード後にハウツーモーダルを開く
+  if (localStorage.getItem('initialVisit') != 'false') {
+    openHowToModal();
+  }
+  localStorage.setItem('initialVisit', 'false');
+
   init();
 });
 
