@@ -2,27 +2,13 @@ import { checkAndDisplayGameClear } from './checkAndDisplayGameClear.js';
 import { tileMaps } from './tileMaps.js';
 import { draw } from './draw.js';
 import { closeClearModal, closeHowToModal } from './closeModal.js';
+import { moveSound, changeStageSound, systemSound } from './sound.js';
 
 let playerPosX;
 let playerPosY;
 let tileMapCopy;
 let currentStage = 0;
 const stageIndex = document.getElementById('stage-index');
-
-const moveSound = new Howl({
-  src: ['assets/sounds/move.mp3'],
-  volume: 0.5,
-});
-
-const changeStageSound = new Howl({
-  src: ['assets/sounds/change-stage.mp3'],
-  volume: 0.5,
-});
-
-const systemSound = new Howl({
-  src: ['assets/sounds/system.mp3'],
-  volume: 0.25,
-});
 
 window.addEventListener('load', () => {
   init();

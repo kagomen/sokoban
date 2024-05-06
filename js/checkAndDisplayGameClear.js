@@ -1,8 +1,4 @@
-
-const sound = new Howl({
-  src: ['assets/sounds/clear.mp3'],
-  volume: 0.25,
-});
+import { clearSound } from './sound.js';
 
 export function checkAndDisplayGameClear(tileMap) {
 
@@ -21,6 +17,6 @@ export function checkAndDisplayGameClear(tileMap) {
     document.getElementById('clear-mask').hidden = false;
     document.getElementById('clear-modal').hidden = false;
 
-    sound.play();
+    clearSound.play();
   }
 }
