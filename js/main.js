@@ -2,7 +2,7 @@ import { checkAndDisplayGameClear } from './checkAndDisplayGameClear.js';
 import { tileMaps } from './tileMaps.js';
 import { draw } from './draw.js';
 import { closeClearModal, closeHowToModal, openHowToModal } from './modal.js';
-import { moveSound, changeStageSound, systemSound } from './sound.js';
+import { moveSound, changeStageSound, systemSound, soundOn, soundOff } from './sound.js';
 
 let playerPosX;
 let playerPosY;
@@ -215,4 +215,12 @@ document.getElementById('page-title').addEventListener('click', () => {
   currentStage = 0;
   stageIndex.textContent = currentStage + 1;
   init();
+});
+
+document.getElementById('sound-on-btn').addEventListener('click', () => {
+  soundOn();
+});
+
+document.getElementById('sound-off-btn').addEventListener('click', () => {
+  soundOff();
 });

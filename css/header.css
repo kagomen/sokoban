@@ -8,7 +8,7 @@ header {
   border-bottom: 1px solid var(--yellow);
   background: var(--black);
 
-  div {
+  #page-title {
     margin-left: 12px;
     display: flex;
     align-items: center;
@@ -26,8 +26,23 @@ header {
     }
   }
 
-  p {
-    margin-right: 12px;
-    cursor: pointer;
+  #header-nav-wrapper {
+    display: flex;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      fill: var(--white);
+    }
+
+    #how-to-btn {
+      margin-right: 16px;
+    }
+
+    #sound-setting-btn {
+      display: flex;
+      margin-right: 16px;
+    }
   }
 }

@@ -24,7 +24,31 @@
       <img src="assets/sokoban-logo.png" alt="logo-image" />
       <h1>Sokoban</h1>
     </div>
-    <p id="how-to-btn">?</p>
+
+    <div id="header-nav-wrapper">
+      <!-- ヘルプボタン -->
+      <svg id="how-to-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M13 2h-2v4h2zm2 6H9v2H7v4h2v4h6v-4h2v-4h-2zm0 2v4h-2v2h-2v-2H9v-4zM9 20h6v2H9zm14-9v2h-4v-2zM5 13v-2H1v2zm12-7h2v2h-2zm2 0h2V4h-2zM5 6h2v2H5zm0 0V4H3v2z" />
+      </svg>
+
+      <!-- サウンドボタン ここから -->
+      <div id="sound-setting-btn">
+        <div id="sound-off-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M13 2h-2v2H9v2H7v2H3v8h4v2h2v2h2v2h2zM9 18v-2H7v-2H5v-4h2V8h2V6h2v12zm10-6.777h-2v-2h-2v2h2v2h-2v2h2v-2h2v2h2v-2h-2zm0 0h2v-2h-2z" />
+          </svg>
+        </div>
+        <div id="sound-on-btn" hidden>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M11 2h2v20h-2v-2H9v-2h2V6H9V4h2zM7 8V6h2v2zm0 8H3V8h4v2H5v4h2zm0 0v2h2v-2zm10-6h-2v4h2zm2-2h2v8h-2zm0 8v2h-4v-2zm0-10v2h-4V6z" />
+          </svg>
+        </div>
+      </div>
+      <!-- サウンドボタン ここまで -->
+    </div>
   </header>
 
   <main>
