@@ -67,6 +67,8 @@ function update(e) {
       y1 += 1;
       y2 += 2;
       break;
+    default:
+      return;
   }
 
   if ((tileMapCopy[y1][x1] & 0x2) == 0) {  // 1コマ先が通路か目的地だったら
@@ -101,6 +103,29 @@ function update(e) {
   checkAndDisplayGameClear(tileMapCopy);
 }
 
+function undo() {
+  systemSound.play();
+  if (moveStack.length > 1) {
+    moveStack.pop();
+    playerPosXStack.pop();
+    playerPosYStack.pop();
+    draw(moveStack[moveStack.length - 1], playerPosXStack[moveStack.length - 1], playerPosYStack[moveStack.length - 1]);
+  } else {  // 1マス目まで戻ったら
+    init();
+    moveStack = [];
+    playerPosXStack = [];
+    playerPosYStack = [];
+  }
+}
+
+function reset() {
+  systemSound.play();
+  moveStack = [];
+  playerPosXStack = [];
+  playerPosYStack = [];
+  init();
+}
+
 
 // ================ スマホ用矢印ボタンのクリックイベント ================
 
@@ -121,27 +146,19 @@ document.getElementById('down-btn').addEventListener('click', () => {
 // ====================== その他クリックイベント ======================
 
 document.getElementById('undo-btn').addEventListener('click', () => {
-  systemSound.play();
+  undo();
+});
 
-  if (moveStack.length > 1) {
-    moveStack.pop();
-    playerPosXStack.pop();
-    playerPosYStack.pop();
-    draw(moveStack[moveStack.length - 1], playerPosXStack[moveStack.length - 1], playerPosYStack[moveStack.length - 1]);
-  } else {  // 1マス目まで戻ったら
-    init();
-    moveStack = [];
-    playerPosXStack = [];
-    playerPosYStack = [];
+window.addEventListener('keydown', (e) => {
+  if (e.code == 'Backspace') {
+    undo();
+  } else if (e.code == 'KeyR') {
+    reset();
   }
 });
 
 document.getElementById('reset-btn').addEventListener('click', () => {
-  systemSound.play();
-  moveStack = [];
-  playerPosXStack = [];
-  playerPosYStack = [];
-  init();
+  reset();
 });
 
 const stageIndex = document.getElementById('stage-index');
