@@ -10,18 +10,18 @@ let currentStage = 0;
 const stageIndex = document.getElementById('stage-index');
 
 const moveSound = new Howl({
-  src: ['assets/move.mp3'],
-  volume: 0.7,
+  src: ['assets/sounds/move.mp3'],
+  volume: 0.5,
 });
 
 const changeStageSound = new Howl({
-  src: ['assets/change-stage.mp3'],
-  volume: 0.7,
+  src: ['assets/sounds/change-stage.mp3'],
+  volume: 0.5,
 });
 
 const systemSound = new Howl({
-  src: ['assets/system.mp3'],
-  volume: 0.6,
+  src: ['assets/sounds/system.mp3'],
+  volume: 0.25,
 });
 
 window.addEventListener('load', () => {

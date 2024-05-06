@@ -1,7 +1,7 @@
 
 const sound = new Howl({
-  src: ['assets/clear.mp3'],
-  volume: 0.5,
+  src: ['assets/sounds/clear.mp3'],
+  volume: 0.25,
 });
 
 export function checkAndDisplayGameClear(tileMap) {
