@@ -8,6 +8,9 @@ let playerPosX;
 let playerPosY;
 let tileMapCopy;
 let currentStage = 0;
+let moveStack = [];
+let playerPosXStack = [];
+let playerPosYStack = [];
 
 window.addEventListener('load', () => {
   init();
@@ -36,7 +39,7 @@ function init() {
     }
   }
   tileMapCopy = structuredClone(tileMaps[currentStage]);
-  tileMapCopy[playerPosX][playerPosY] = 0;
+  tileMapCopy[playerPosY][playerPosX] = 0;
   draw(tileMapCopy, playerPosX, playerPosY);
 }
 
@@ -86,8 +89,15 @@ function update(e) {
       playerPosY = y1;
     }
   }
+
   moveSound.play();
+
   draw(tileMapCopy, playerPosX, playerPosY);
+
+  moveStack.push(structuredClone(tileMapCopy));
+  playerPosXStack.push(playerPosX);
+  playerPosYStack.push(playerPosY);
+
   checkAndDisplayGameClear(tileMapCopy);
 }
 
@@ -95,23 +105,42 @@ function update(e) {
 // ================ スマホ用矢印ボタンのクリックイベント ================
 
 document.getElementById('up-btn').addEventListener('click', () => {
-  update('ArrowUp');
+  update({ code: 'ArrowUp' });
 });
 document.getElementById('left-btn').addEventListener('click', () => {
-  update('ArrowLeft');
+  update({ code: 'ArrowLeft' });
 });
 document.getElementById('right-btn').addEventListener('click', () => {
-  update('ArrowRight');
+  update({ code: 'ArrowRight' });
 });
 document.getElementById('down-btn').addEventListener('click', () => {
-  update('ArrowDown');
+  update({ code: 'ArrowDown' });
 });
 
 
 // ====================== その他クリックイベント ======================
 
+document.getElementById('undo-btn').addEventListener('click', () => {
+  systemSound.play();
+
+  if (moveStack.length > 1) {
+    moveStack.pop();
+    playerPosXStack.pop();
+    playerPosYStack.pop();
+    draw(moveStack[moveStack.length - 1], playerPosXStack[moveStack.length - 1], playerPosYStack[moveStack.length - 1]);
+  } else {  // 1マス目まで戻ったら
+    init();
+    moveStack = [];
+    playerPosXStack = [];
+    playerPosYStack = [];
+  }
+});
+
 document.getElementById('reset-btn').addEventListener('click', () => {
   systemSound.play();
+  moveStack = [];
+  playerPosXStack = [];
+  playerPosYStack = [];
   init();
 });
 
