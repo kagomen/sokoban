@@ -1,16 +1,16 @@
 export const moveSound = new Howl({
   src: ['assets/sounds/move.mp3'],
-  volume: 0.5,
+  volume: 0.6,
 });
 
 export const changeStageSound = new Howl({
   src: ['assets/sounds/change-stage.mp3'],
-  volume: 0.5,
+  volume: 0.3,
 });
 
 export const systemSound = new Howl({
   src: ['assets/sounds/system.mp3'],
-  volume: 0.25,
+  volume: 0.1,
 });
 
 export const clearSound = new Howl({
