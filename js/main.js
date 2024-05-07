@@ -14,6 +14,11 @@ let playerPosYStack = [];
 
 window.addEventListener('load', () => {
 
+  // ローディング画面の表示
+  setTimeout(() => {
+    document.getElementById('loading-screen').hidden = true;
+  }, 800);
+
   // 初訪問であればロード後にハウツーモーダルを開く
   if (localStorage.getItem('initialVisit') != 'false') {
     openHowToModal();

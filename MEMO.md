@@ -105,4 +105,11 @@
   - Safari だと`user-select: none;`が効かない
 
 - -webkit-touch-callout: none;
+
   - 画像などを長押しした際に出現するポップアップを無効にする
+
+- hidden
+
+  > ウェブブラウザーは display: none を使用して hidden 状態を実装することができ、その場合、その要素はページレイアウトに参加しません。これはまた、hidden 状態の要素で CSS の display プロパティの値を変更すると、その状態が上書きされるということでもあります。例えば、display: block とスタイル設定された要素は、hidden 属性があるにもかかわらず、表示されることになります。
+
+  `display: flex`なども同様で、`flex`を使用している要素に`hidden = true`としても実行されない
