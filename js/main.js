@@ -111,8 +111,6 @@ function update(e) {
 
 function undo() {
   if (moveStack.length > 1) {
-    systemSound.play();
-
     moveStack.pop();
     playerPosXStack.pop();
     playerPosYStack.pop();
@@ -128,7 +126,6 @@ function undo() {
 }
 
 function reset() {
-  systemSound.play();
   moveStack = [];
   playerPosXStack = [];
   playerPosYStack = [];
@@ -155,18 +152,22 @@ document.getElementById('down-btn').addEventListener('click', () => {
 // ====================== その他クリックイベント ======================
 
 document.getElementById('undo-btn').addEventListener('click', () => {
+  systemSound.play();
   undo();
 });
 
 window.addEventListener('keydown', (e) => {
   if (e.code == 'Backspace') {
+    systemSound.play();
     undo();
   } else if (e.code == 'KeyR') {
+    systemSound.play();
     reset();
   }
 });
 
 document.getElementById('reset-btn').addEventListener('click', () => {
+  systemSound.play();
   reset();
 });
 
@@ -177,6 +178,7 @@ document.getElementById('next-stage-btn').addEventListener('click', () => {
     currentStage++;
     stageIndex.textContent = currentStage + 1;
     init();
+    reset();
     changeStageSound.play();
   }
 });
@@ -186,6 +188,7 @@ document.getElementById('prev-stage-btn').addEventListener('click', () => {
     currentStage--;
     stageIndex.textContent = currentStage + 1;
     init();
+    reset();
     changeStageSound.play();
   }
 });
@@ -199,6 +202,7 @@ document.getElementById('clear-next-stage-btn').addEventListener('click', () => 
   currentStage++;
   stageIndex.textContent = currentStage + 1;
   init();
+  reset();
   systemSound.play();
   closeClearModal();
 });
@@ -217,6 +221,7 @@ document.getElementById('page-title').addEventListener('click', () => {
   currentStage = 0;
   stageIndex.textContent = currentStage + 1;
   init();
+  reset();
 });
 
 document.getElementById('sound-on-btn').addEventListener('click', () => {
