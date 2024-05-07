@@ -34,14 +34,7 @@ window.addEventListener('keydown', (e) => {
 
 function init() {
 
-  // // 後で消す
-  // for (let i = 0; i < tileMaps.length; i++) {
-  //   console.log(`ステージ${i}の長さ: `, tileMaps[i].length);
-  //   for (let x = 0; x < tileMaps[i].length; x++) {
-  //     console.log(tileMaps[i][x].length);
-  //   }
-  // }
-
+  // マップからプレイヤー位置を特定して変数宣言する
   for (let y = 0; y < tileMaps[currentStage].length; y++) {
     for (let x = 0; x < tileMaps[currentStage][y].length; x++) {
       if (tileMaps[currentStage][y][x] == '@') {
@@ -50,6 +43,7 @@ function init() {
       }
     }
   }
+
   tileMapCopy = structuredClone(tileMaps[currentStage]);
   tileMapCopy[playerPosY][playerPosX] = 0;
   draw(tileMapCopy, playerPosX, playerPosY);
@@ -106,27 +100,30 @@ function update(e) {
 
   moveSound.play();
 
-  draw(tileMapCopy, playerPosX, playerPosY);
-
   moveStack.push(structuredClone(tileMapCopy));
   playerPosXStack.push(playerPosX);
   playerPosYStack.push(playerPosY);
+
+  draw(tileMapCopy, playerPosX, playerPosY);
 
   checkAndDisplayGameClear(tileMapCopy);
 }
 
 function undo() {
-  systemSound.play();
   if (moveStack.length > 1) {
+    systemSound.play();
+
     moveStack.pop();
     playerPosXStack.pop();
     playerPosYStack.pop();
-    draw(moveStack[moveStack.length - 1], playerPosXStack[moveStack.length - 1], playerPosYStack[moveStack.length - 1]);
+
+    tileMapCopy = structuredClone(moveStack[moveStack.length - 1]);
+    playerPosX = structuredClone(playerPosXStack[moveStack.length - 1]);
+    playerPosY = structuredClone(playerPosYStack[moveStack.length - 1]);
+
+    draw(tileMapCopy, playerPosX, playerPosY);
   } else {  // 1マス目まで戻ったら
-    init();
-    moveStack = [];
-    playerPosXStack = [];
-    playerPosYStack = [];
+    reset();
   }
 }
 
