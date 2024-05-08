@@ -113,3 +113,36 @@
   > ウェブブラウザーは display: none を使用して hidden 状態を実装することができ、その場合、その要素はページレイアウトに参加しません。これはまた、hidden 状態の要素で CSS の display プロパティの値を変更すると、その状態が上書きされるということでもあります。例えば、display: block とスタイル設定された要素は、hidden 属性があるにもかかわらず、表示されることになります。
 
   `display: flex`なども同様で、`flex`を使用している要素に`hidden = true`としても実行されない
+
+- `p .title`
+  - p タグの子要素の title クラスを指定
+- `p.title`
+
+  - title クラスを持つ p タグを指定
+
+- `@import`を使うメリット
+  - html がすっきりする
+  - ファイルごとに`@charset: 'UTF-8';`を書かなくて済む
+
+## Sass(SCSS)
+
+- パーシャル
+
+  - 対応する CSS ファイルを吐き出さない SCSS ファイルの管理方法
+  - `@use 'ファイル名';`でパーシャルファイルを呼び出す
+  - パーシャルファイルの名前は`_reset.scss`などとし、呼び出し時は`_`と`.scss`を省略する
+
+- settings.json
+
+  - 吐き出す CSS ファイルのディレクトリを指定する
+
+- @mixin
+
+  - コンポーネントのような形で css を定義する
+  - `@mixin button {...}`と定義する
+  - 使用する際は`@include button`と呼び出す
+  - `@mixin button($color)`などとして、引数の設定が可能
+    - `@mixin button($color: blue)`としてデフォルト値の設定も可能
+
+- @forward
+  - ファイルをまとめて読み込む時に使用する
