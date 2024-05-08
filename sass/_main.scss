@@ -1,0 +1,33 @@
+* {
+  font-family: MenuCard, sans-serif;
+}
+
+body {
+  z-index: -100;
+  background: var(--black);
+  color: var(--white);
+  font-size: 14px;
+}
+
+main {
+  height: calc(100dvh - 48px - 32px);
+  background: var(--black);
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 24px;
+  color: var(--white);
+  background: var(--black);
+  border: 1px solid var(--yellow);
+  border-bottom: 4px solid var(--yellow);
+  font-size: 12px;
+}

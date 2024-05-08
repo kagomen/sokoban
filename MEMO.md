@@ -121,8 +121,17 @@
   - title クラスを持つ p タグを指定
 
 - `@import`を使うメリット
+
   - html がすっきりする
   - ファイルごとに`@charset: 'UTF-8';`を書かなくて済む
+
+- Autoprefixer
+
+  - サポート対象にしたいブラウザを設定すると自動的にベンダープレフィックス（-webkit-, -moz-, -ms-）を付け、必要であれば構文の変更もしてくれるツール
+
+    | -webkit- | Google Chrome, Safari |
+    | -moz- | Firefox |
+    | -ms- | IE |
 
 ## Sass(SCSS)
 
